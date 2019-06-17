@@ -16,4 +16,10 @@ class ItemController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find_by(id: params[:id])
+    @item.destroy
+    redirect_to("/item/index")
+  end
+
 end
