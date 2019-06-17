@@ -1,1 +1,7 @@
 <p>Index Page</p>
+<% @items.each do |item|%>
+    <%= item.using_month%>月
+    <%= item.using_day%>日
+    <%= item.price%>円
+    <%= item.category%>
+<% end %>
