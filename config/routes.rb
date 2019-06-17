@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user/new' => "user#new"
+
   root 'item#new'
   get 'item/index' => "item#index"
   post 'item/create' => "item#create"
