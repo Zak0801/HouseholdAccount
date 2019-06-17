@@ -1,0 +1,15 @@
+<div class="sub_title">
+    <%= @month.using_month %>月
+</div>
+
+<p>支出</p>
+<% expense = 0 %>
+<% @items.each do |item| %>
+    <%= item.using_month %>月
+    <%= item.using_day %>日
+    ¥<%= item.price %>
+    <% expense += item.price %>
+    <%= item.category %><br>
+<% end %>
+合計金額:   ¥<%= expense %>
+    

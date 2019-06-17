@@ -39,4 +39,8 @@ class ItemController < ApplicationController
     redirect_to("/item/index")
   end
 
+  def month
+    @month = Item.find_by(using_month: params[:using_month])
+    @items = Item.where(using_month: @month.using_month)
+  end
 end
