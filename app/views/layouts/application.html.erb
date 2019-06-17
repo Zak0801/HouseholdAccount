@@ -15,6 +15,7 @@
       <%= link_to("一覧","/item/index")%>
       <%= link_to("新規登録","/user/new")%>
       <%= link_to("ログイン","/login")%>
+      <%= link_to("ログアウト","/logout",{method: "post"})%>
     </header>
     <%= yield %>
   </body>

@@ -25,4 +25,11 @@ class UserController < ApplicationController
     end
   end
 
+  def logout
+    if session[:user_id]
+      session[:user_id] = nil
+      redirect_to("/item/index")
+    end
+  end
+  
 end
