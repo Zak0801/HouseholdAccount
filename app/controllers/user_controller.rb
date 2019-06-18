@@ -36,4 +36,12 @@ class UserController < ApplicationController
   def edit_form
   end
 
+  def edit
+    @current_user.name = params[:myname]
+    @current_user.password = params[:password]
+    if @current_user.save
+      redirect_to("/item/index")
+    end
+  end
+
 end
