@@ -41,6 +41,8 @@ class UserController < ApplicationController
     @current_user.password = params[:password]
     if @current_user.save
       redirect_to("/item/index")
+    else
+      render("user/edit_form")
     end
   end
 
