@@ -16,6 +16,9 @@
       <%= link_to("新規登録","/user/new")%>
       <%= link_to("ログイン","/login")%>
       <%= link_to("ログアウト","/logout",{method: "post"})%>
+      <% if session[:user_id] %>
+        <%= link_to(@current_user.name,"/user/edit") %>
+      <% end %>
     </header>
     <%= yield %>
   </body>

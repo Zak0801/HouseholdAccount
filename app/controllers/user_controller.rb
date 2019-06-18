@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+
   def new
   end
 
@@ -31,5 +32,8 @@ class UserController < ApplicationController
       redirect_to("/item/index")
     end
   end
-  
+
+  def edit_form
+  end
+
 end
