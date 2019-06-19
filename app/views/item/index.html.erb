@@ -1,0 +1,9 @@
+<p>Index Page</p>
+<% @items.each do |item|%>
+    <%= link_to(item.using_month,"/item/month/#{item.using_month}") %>月
+    <%= item.using_day%>日
+    <%= item.price%>円
+    <%= item.category%>
+    [<%= link_to("編集","/item/#{item.id}/edit")%>]
+    [<%= link_to("削除","/item/#{item.id}/destroy",{method: "post"})%>]<br>
+<% end %>

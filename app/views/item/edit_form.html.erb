@@ -1,16 +1,17 @@
-<h1>Item#new</h1>
-<%= form_tag("/item/create") do %>
-    <p>金額 ¥<input name="price"></p>
+<%= form_tag("/item/#{@item.id}/edit") do %>
+    <p>金額 ¥<input name="price" value="<%=@item.price %>"></p>
     <p>カテゴリー
     <select name="category">
+        <option value=""><%= @item.category%></option>
         <option value="現金">現金</option>
         <option value="クレジットカード">クレジットカード</option>
         <option value="収入">収入</option>
+
     </select>
     </p>
     <p>日付
     <select name="month" >
-        <option value="">--</option>
+        <option value=""><%= @item.using_month%></option>  
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -25,7 +26,7 @@
         <option value="12">12</option>
     </select>月
     <select name="day">
-        <option value="">--</option>
+        <option value=""><%= @item.using_day%></option>  
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -59,5 +60,6 @@
         <option value="31">31</option>
     </select>日
     </p>
-    <input type="submit" value="確定">
+    <input type="submit" value="更新">
 <% end %>
+
