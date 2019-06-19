@@ -9,7 +9,10 @@
     <%= item.using_day %>日
     ¥<%= item.price %>
     <% expense += item.price %>
-    <%= item.category %><br>
+    <%= item.category %>
+    <% if item.product_name %>
+        <%= item.product_name %>
+    <% end %><br>
 <% end %>
 合計金額:   ¥<%= expense %>
     

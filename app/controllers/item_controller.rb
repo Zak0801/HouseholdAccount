@@ -9,7 +9,11 @@ class ItemController < ApplicationController
   end
 
   def create
-    @item = Item.new(price: params[:price], category: params[:category], using_month: params[:month], using_day: params[:day])
+    @item = Item.new(price: params[:price], 
+                    category: params[:category], 
+                    product_name: params[:product_name],
+                    using_month: params[:month], 
+                    using_day: params[:day])
     if @item.save
       redirect_to("/item/index")
     else
