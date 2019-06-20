@@ -54,8 +54,8 @@ class ItemController < ApplicationController
 
   def forbid_not_login_user
     if !@current_user
-      flash[:notice] = "ログインしてください"
       redirect_to("/")
+      flash[:notice] = "ログインしてください"
     end
   end
 
