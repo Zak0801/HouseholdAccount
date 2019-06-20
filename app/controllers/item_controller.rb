@@ -6,7 +6,8 @@ class ItemController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    @user = User.find_by(id: @current_user.id)
+    @items = Item.where(user_id: @user.id)
   end
 
   def create
@@ -14,7 +15,8 @@ class ItemController < ApplicationController
                     category: params[:category], 
                     product_name: params[:product_name],
                     using_month: params[:month], 
-                    using_day: params[:day])
+                    using_day: params[:day],
+                    user_id: @current_user.id)
     if @item.save
       redirect_to("/item/index")
     else
