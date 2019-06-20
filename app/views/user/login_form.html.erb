@@ -1,4 +1,6 @@
 <%= form_tag("/login") do %>
-    <p>パスワード:  <input type="password" name="password" autofocus></p>
-    <input type="submit" value="ログイン" autofocus>
+    <div class="login_box">
+        <p>パスワード:  <input type="password" name="password" autofocus></p><br>
+        <input type="submit" value="ログイン" class="button" autofocus>
+    </div>
 <% end %>
