@@ -27,13 +27,11 @@
         <%= link_to("ログイン","/login")%>
       </div>
     <% end %>
-    <div class="message">
       <% if flash[:notice] %>
-        <%= flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
       <% end %>
-    </div>
-
-
     </header>
     <%= yield %>
   </body>
