@@ -45,6 +45,7 @@ class UserController < ApplicationController
     @current_user.password = params[:password]
     if @current_user.save
       redirect_to("/item/index")
+      flash[:notice] = "変更を完了しました"
     else
       render("user/edit_form")
     end
