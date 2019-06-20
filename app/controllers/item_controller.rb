@@ -2,7 +2,7 @@ class ItemController < ApplicationController
   before_action :forbid_not_login_user
 
   def new
-
+    @item = Item.new
   end
 
   def index

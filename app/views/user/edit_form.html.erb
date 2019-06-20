@@ -1,3 +1,8 @@
+<% @current_usergit.errors.full_messages.each do |message|%>
+    <div class="error_message">
+        <%= message %>
+    </div>
+<% end %>
 <%= form_tag("/user/edit") do %>
     <p>ユーザー名:  <input name="myname" value="<%= @current_user.name %>" autofocus></p>
     <p>パスワード:  <input type="password" name="password" value="<%= @current_user.password %>"></p>
