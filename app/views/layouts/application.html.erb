@@ -21,6 +21,12 @@
       <%= link_to("新規登録","/user/new")%>
       <%= link_to("ログイン","/login")%>
     <% end %>
+    <div class="message">
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
+    </div>
+
 
     </header>
     <%= yield %>
