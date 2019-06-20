@@ -3,16 +3,43 @@
 </div>
 
 <p>支出</p>
-<% expense = 0 %>
-<% @items.each do |item| %>
-    <%= item.using_month %>月
-    <%= item.using_day %>日
-    ¥<%= item.price %>
-    <% expense += item.price %>
-    <%= item.category %>
-    <% if item.product_name %>
-        <%= item.product_name %>
-    <% end %><br>
-<% end %>
-合計金額:   ¥<%= expense %>
+    <% expense = 0 %>
+    <% @items.each do |item| %>
+    <% if item.category == "現金" || item.category == "クレジットカード"%>
+    <div class="expense">
+        <%= item.using_month %>月
+        <%= item.using_day %>日
+        ¥<%= item.price %>
+        <% expense += item.price %>
+        <%= item.category %>
+        <%= item.product_name %><br>
+    </div>
+    <% end %>
+    <% end %>
+    <p>合計金額:   ¥<%= expense %></p>
+
+<p>収入</p>
+    <% income = 0 %>
+    <% @items.each do |item| %>
+    <% if item.category == "収入"%>
+    <div class="income">
+        <%= item.using_month %>月
+        <%= item.using_day %>日
+        ¥<%= item.price %>
+        <% income += item.price %>
+        <%= item.category %>
+    <% end %>
+    </div>
+    <% end %>
+    <p>合計金額:   ¥<%= income %></p>
+
+<p>収支</p>
+    <% deduct = income - expense %>
+    <span id="value">¥
+        <span id="deduct"><%= deduct %></span>
+    </span>
+
+
+
+
     

@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+  before_action :identify_login_user, {only: [:login, :login_form, :new, :create]}
 
   def new
   end
@@ -34,6 +35,7 @@ class UserController < ApplicationController
   end
 
   def edit_form
+    
   end
 
   def edit

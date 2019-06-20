@@ -1,3 +1,8 @@
+<% @item.errors.full_messages.each do |message|%>
+    <div class="error_message">
+        <%= message %><br>
+    </div>
+<% end %>
 <%= form_tag("/item/create") do %>
     <p>金額 ¥<input name="price" autofocus></p>
     <p>カテゴリー
@@ -8,7 +13,6 @@
         <option value="収入">収入</option>
     </select>
     <p id="product_name" hidden>購入品名<input name="product_name"></p>
-    </p>
     <p>日付
     <select name="month" >
         <option value="">--</option>
@@ -60,6 +64,7 @@
         <option value="31">31</option>
     </select>日
     </p>
+    </div>
     <input type="submit" value="確定">
 <% end %>
 

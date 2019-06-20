@@ -1,11 +1,13 @@
 class ItemController < ApplicationController
+  before_action :forbid_not_login_user
 
   def new
-
+    @item = Item.new
   end
 
   def index
-    @items = Item.all
+    @user = User.find_by(id: @current_user.id)
+    @items = Item.where(user_id: @user.id)
   end
 
   def create
@@ -13,7 +15,8 @@ class ItemController < ApplicationController
                     category: params[:category], 
                     product_name: params[:product_name],
                     using_month: params[:month], 
-                    using_day: params[:day])
+                    using_day: params[:day],
+                    user_id: @current_user.id)
     if @item.save
       redirect_to("/item/index")
     else
@@ -48,4 +51,12 @@ class ItemController < ApplicationController
     @month = Item.find_by(using_month: params[:using_month])
     @items = Item.where(using_month: @month.using_month)
   end
+
+  def forbid_not_login_user
+    if !@current_user
+      flash[:notice] = "ログインしてください"
+      redirect_to("/")
+    end
+  end
+
 end

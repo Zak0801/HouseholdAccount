@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'item#new'
+  root 'home#top'
+
+  get '/item/new' => "item#new"
   get '/item/index' => "item#index"
   post '/item/create' => "item#create"
   get '/item/:id/edit' => "item#edit_form"
