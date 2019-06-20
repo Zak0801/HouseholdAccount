@@ -6,7 +6,7 @@
 <%= form_tag("/item/create") do %>
     <p>金額 ¥<input name="price" autofocus></p>
     <p>カテゴリー
-    <select name="category" id="category" onchange="check()">
+    <select name="category" id="category" onchange="check()" onsubmit="output()">
         <option value="">選択してください</option>
         <option value="現金">現金</option>
         <option value="クレジットカード">クレジットカード</option>
@@ -64,6 +64,7 @@
         <option value="31">31</option>
     </select>日
     </p>
+    </div>
     <input type="submit" value="確定">
 <% end %>
 
