@@ -1,6 +1,6 @@
 <% @item.errors.full_messages.each do |message|%>
     <div class="error_message">
-        <%= message %><br>
+        <%= message %>
     </div>
 <% end %>
 <%= form_tag("/item/create") do %>

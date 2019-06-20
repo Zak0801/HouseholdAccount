@@ -1,5 +1,6 @@
 <%= form_tag("/item/#{@item.id}/edit") do %>
-    <p>金額 ¥<input name="price" value="<%=@item.price %>"></p>
+    <div class="container">
+    <p>金額 ¥<input name="price" value="<%=@item.price %>"></p><br>
     <p>カテゴリー
     <select name="category">
         <option value=""><%= @item.category%></option>
@@ -8,7 +9,7 @@
         <option value="収入">収入</option>
 
     </select>
-    </p>
+    </p><br>
     <p>日付
     <select name="month" >
         <option value=""><%= @item.using_month%></option>  
@@ -59,7 +60,8 @@
         <option value="30">30</option>
         <option value="31">31</option>
     </select>日
-    </p>
-    <input type="submit" value="更新">
+    </p><br>
+    <input type="submit" value="更新" class="button">
+    </div>
 <% end %>
 
