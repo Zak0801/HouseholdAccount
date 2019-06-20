@@ -15,6 +15,9 @@
 
     <header>
     <% if session[:user_id] %>
+      <div class = "title">
+        <p>家計簿</p>
+      </div>
       <div class="menu">
         <%= link_to("投稿","/item/new")%>
         <%= link_to("一覧","/item/index")%>
@@ -22,6 +25,9 @@
         <%= link_to("ログアウト","/logout",{method: "post"})%>
       </div>
     <% else %>
+      <div class = "title">
+        <p>家計簿</p>
+      </div>
       <div class="menu">  
         <%= link_to("新規登録","/user/new")%>
         <%= link_to("ログイン","/login")%>
