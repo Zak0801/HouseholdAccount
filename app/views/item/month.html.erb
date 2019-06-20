@@ -12,13 +12,11 @@
         ¥<%= item.price %>
         <% expense += item.price %>
         <%= item.category %>
-        <% if item.product_name %>
-            <%= item.product_name %>
-        <% end %><br>
+        <%= item.product_name %><br>
     </div>
     <% end %>
     <% end %>
-    合計金額:   ¥<%= expense %>
+    <p>合計金額:   ¥<%= expense %></p>
 
 <p>収入</p>
     <% income = 0 %>
@@ -30,11 +28,18 @@
         ¥<%= item.price %>
         <% income += item.price %>
         <%= item.category %>
-        <% if item.product_name %>
-            <%= item.product_name %>
-        <% end %><br>
     <% end %>
     </div>
     <% end %>
-    合計金額:   ¥<%= income %>
+    <p>合計金額:   ¥<%= income %></p>
+
+<p>収支</p>
+    <% deduct = income - expense %>
+    <span id="value">¥
+        <span id="deduct"><%= deduct %></span>
+    </span>
+
+
+
+
     
