@@ -4,7 +4,7 @@
     </div>
 <% end %>
 <%= form_tag("/user/edit") do %>
-    <div class="edit_box">
+    <div class="box">
         <p>ユーザー名:  <input name="myname" value="<%= @current_user.name %>" autofocus></p>
         <p>パスワード:  <input type="password" name="password" value="<%= @current_user.password %>"></p><br>
         <input type="submit" value="変更" class="button">

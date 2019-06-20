@@ -2,22 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//edit_form
-.edit_box{
+//edit_form,login_form,new
+.box{
     position:absolute;
     top:100px;
 }
 
-.edit_box p{
+.box p{
     font-size:30px;
 }
 
-//login_form
-.login_box{
-    position:absolute;
-    top:100px;
-}
-
-.login_box p{
-    font-size:30px;
-}
