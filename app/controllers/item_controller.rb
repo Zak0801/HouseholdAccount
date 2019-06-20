@@ -1,4 +1,5 @@
 class ItemController < ApplicationController
+  before_action :forbid_not_login_user
 
   def new
 
@@ -48,4 +49,12 @@ class ItemController < ApplicationController
     @month = Item.find_by(using_month: params[:using_month])
     @items = Item.where(using_month: @month.using_month)
   end
+
+  def forbid_not_login_user
+    if !@current_user
+      flash[:notice] = "ログインしてください"
+      redirect_to("/")
+    end
+  end
+
 end

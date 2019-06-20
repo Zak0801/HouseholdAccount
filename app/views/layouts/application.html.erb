@@ -13,12 +13,12 @@
   <%= javascript_include_tag "check" %>
     <header>
     <% if session[:user_id] %>
-      <%= link_to("Top","/") %>
       <%= link_to("投稿","/item/new") %>
       <%= link_to("一覧","/item/index")%>
       <%= link_to(@current_user.name,"/user/edit") %>
       <%= link_to("ログアウト","/logout",{method: "post"})%>
     <% else %>
+      <%= link_to("Top","/") %>
       <%= link_to("新規登録","/user/new")%>
       <%= link_to("ログイン","/login")%>
     <% end %>

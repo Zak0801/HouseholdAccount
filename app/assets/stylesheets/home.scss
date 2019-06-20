@@ -1,3 +1,16 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.login a{ 
+    display:inline-block;
+    padding: 15px;
+    background-color:rgba(112,128,144,0.7);
+    text-decoration:none;
+    color:#fff;
+    border-radius:10px;
+
+}
+
+.login a:hover{
+    background-color:rgba(112,128,144,1);
+}
