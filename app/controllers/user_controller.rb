@@ -2,6 +2,7 @@ class UserController < ApplicationController
   before_action :identify_login_user, {only: [:login, :login_form, :new, :create]}
 
   def new
+    @user = User.new
   end
 
   def create
@@ -23,6 +24,7 @@ class UserController < ApplicationController
       session[:user_id] = @user.id
       redirect_to("/item/index")
     else
+      flash[:notice] = "パスワードが違います"
       render("user/login_form")
     end
   end
